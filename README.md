@@ -92,7 +92,9 @@ Functions and Variables
 
     有时候客户的输入不标准,需要对于输入做出改变。之前讲了输入一般是string，所以一般处理的是string
     见跟多操作: https://docs.python.org/3/library/stdtypes.html#string-methods
-    
+  
+  10.1
+  
     #Ask user for their name
     name = input("What's your name? ")
     
@@ -108,12 +110,14 @@ Functions and Variables
     #Say hello to user
     print(f"hello, {name}")
     
+    =============
     $ python hello.py
     What's your name?      david malan
     hello, David Malan
     
     
-    把冗长的代码简化：
+  10.2 把冗长的代码简化：
+  
     #Ask user for their name
     name = input("What's your name? ")
     
@@ -129,11 +133,223 @@ Functions and Variables
     
     #Say hello to user
     print(f"hello, {name}")
+    
+  10.3 split
+  
+    #Ask user for their name 
+    name = input("What's your name? ").strip().title
+    
+    #Split user's name into first name and last name
+    first, last = name.split(" ")
+    // 暗示用空格隔开的，前面是first，后面是last
+    // 下面引用，引的first这个variable
+    
+    #Say hello to user
+    print(f"hello, {first}")
+    
+    =============
+    $ python hello.py
+    What's your name? david malan
+    hello, David
 
-11.
+11. int - whole number, no decimals
 
-12.
+    +, -, *, /, %(modulo- reminder), //(除数)
+  
+  11.1 create a calculator
+  
+    code calculator.py (- terminal; - build a new python file)
+    
+    x = input("What's x? )
+    y = input("What's y? )
+    
+    z = x + y
+    print(z)
+    
+    $ python calculator.py
+    What's x? 1
+    What's y? 2
+    12
+    //bug: it comcatenates, but input=string, + in string means concatenatination
+    
+    x = input("What's x? )
+    y = input("What's y? )
+    
+    z = int(x) + int(y)
+    print(z)
+    
+    $ python calculator.py
+    What's x? 1
+    What's y? 2
+    3
+    
+  11.2 Nest function
+    
+    x =int(input("What's x? ))
+    y =int(input("What's y? ))
+   
+    print(x + y)
+    
+    $ python calculator.py
+    What's x? 1
+    What's y? 2
+    3
+    // 因为z只用了一次，没必要特地设置新的variable
 
-13.
+12. Interactive mode: 可以直接看结果，互交模式
 
-14.
+    directly type in the terminal:
+    $ python
+    >>> (which means interactive mode)
+    eg:
+    >>> 1+1
+    2
+    >>>print("hello, world")
+    hello, world
+
+13. Float - with decimals（Round）
+
+  13.1
+  
+    x =float(input("What's x? ))
+    y =float(input("What's y? ))
+   
+    print(x + y)
+    
+    $ python calculator.py
+    What's x? 1.2
+    What's y? 3.4
+    4.6
+    
+    but if you want to round the answer
+    round(number[, ndigits])
+    // [] optional，可有可无
+    // 表示你想近似到哪里；默认是整数
+    
+    x = float(input("What's x? ))
+    y = float(input("What's y? ))
+   
+    z = round(x + y)
+    print(z)
+    
+    $ python calculator.py
+    What's x? 1.2
+    What's y? 3.4
+    5
+    
+  13.2 面对大的数值,想要分隔符
+  
+    x = float(input("What's x? ))
+    y = float(input("What's y? ))
+   
+    z = round(x + y)
+    
+    print(f"{z:,}")
+    // :表示分隔
+    
+    $ python calculator.py
+    What's x? 999
+    What's y? 1
+    1,000
+  
+  13.3 Division
+  
+    x = float(input("What's x? ))
+    y = float(input("What's y? ))
+   
+    z = x / y
+    
+    print(z)
+    
+    $ python calculator.py
+    What's x? 2
+    What's y? 3
+    0.6666...(limited digits)
+    
+    For infinte or long digits, round it to precise digits
+    
+    x = float(input("What's x? ))
+    y = float(input("What's y? ))
+   
+    z = round(x / y, 2)
+    
+    print(z)
+    
+    $ python calculator.py
+    What's x? 2
+    What's y? 3
+    0.67
+    
+  另一种相同的方法，用format 方法
+    
+    x = float(input("What's x? ))
+    y = float(input("What's y? ))
+   
+    z = x / y
+    
+    print(f"{z:.2f}")
+    
+    $ python calculator.py
+    What's x? 2
+    What's y? 3
+    0.67
+
+14. def - define a function yourself
+
+  14.1
+  
+    def hello():
+        print("hello")
+    
+    name = input("What's your name? ")
+    hello(name)
+    =============
+    $ python hello.py
+    What's your name? David
+    hello
+    David
+    
+  14.2 more customerize - one line + default
+  
+    def hello(to):
+        print("hello,", to )
+        // "to" refers to objects here, what you put inside
+    
+    name = input("What's your name? ")
+    hello(name)
+    
+    =============
+    $ python hello.py
+    What's your name? David
+    hello, David
+    
+    
+    def hello(to="world"):
+        //默认object是world，有新值，则新值替换
+        print("hello,", to )
+    
+    hello()
+    name = input("What's your name? ")
+    hello(name)
+    
+    =============
+    $ python hello.py
+    hello, world
+    What's your name? David
+    hello, David
+    
+  14.3 结构顺序 + call
+  
+    **** Tips:
+    一般把自己的function写在运用它之前。
+    
+    1:40
+
+15. Scope
+    
+    
+
+16. Return 
+
+17.
+18. 
