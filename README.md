@@ -30,8 +30,7 @@ Functions and Variables
     
 5. Comments
 
-    # explanation with no meaning; 
-    # structure;
+    用#来表示explanation with no meaning; structure;
     
     Or 
     
@@ -94,19 +93,19 @@ Functions and Variables
     有时候客户的输入不标准,需要对于输入做出改变。之前讲了输入一般是string，所以一般处理的是string
     见跟多操作: https://docs.python.org/3/library/stdtypes.html#string-methods
     
-    # Ask user for their name
+    #Ask user for their name
     name = input("What's your name? ")
     
-    # Remove whitespace from str
+    #Remove whitespace from str
     name = name.strip()
     
-    # Capitalize user's name
+    #Capitalize user's name
     name = name.title()
     //name = name.capitalize()
     // capitalize the first letter (David malan)
     // so we decide to use .title()
     
-    # Say hello to user
+    #Say hello to user
     print(f"hello, {name}")
     
     $ python hello.py
@@ -115,20 +114,20 @@ Functions and Variables
     
     
     把冗长的代码简化：
-    # Ask user for their name
+    #Ask user for their name
     name = input("What's your name? ")
     
-    # Remove whitespace from str and capitalize user's name
+    #Remove whitespace from str and capitalize user's name
     name = name.strip().title
     
-    # Say hello to user
+    #Say hello to user
     print(f"hello, {name}")
     
     超级简化：
-    # Ask user for their name 
+    #Ask user for their name 
     name = input("What's your name? ").strip().title
     
-    # Say hello to user
+    #Say hello to user
     print(f"hello, {name}")
 
 11.
