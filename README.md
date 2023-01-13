@@ -1,4 +1,4 @@
-# CS50-Python-Harvard
+# CS50-Python-L1-Harvard
 
 Functions and Variables
 
@@ -342,14 +342,34 @@ Functions and Variables
   
     **** Tips:
     一般把自己的function写在运用它之前。
+    或者，我们把它们以 call的形式写出来～
     
-    1:40
+    def main():
+      name = input("What's your name?")
+      hello(name)
+    
+    def hello(to="world"):
+      print("Hello,", to )
+    
+    main()
+    
+    // main属于主要逻辑：name装好用户输入
+    // name用在hello这个功能上。但此时hello功能还没写出来
+    // 定义hello功能：default是world
+    // 下一步跑main，第二次路过main，此时hello被定义了，且确定了name值
+    // 第二次跑main：main -> hello -> hello + name
 
 15. Scope
     
-    
+    只管自己自己范围里面的变量，main不可以管hello里面的东西。
 
 16. Return 
 
+    def main():
+      x = int(input("What's x? "))
+      print("x squared is", square(x))
+      
+    def square():
+      x * x
 17.
 18. 
