@@ -367,9 +367,16 @@ Functions and Variables
 
     def main():
       x = int(input("What's x? "))
-      print("x squared is", square(x))
-      
-    def square():
-      x * x
-17.
-18. 
+      print(x, "squared is", square(x))
+      // 因为square没有定义，所以下一行需要进行定义
+      // 注意什么在引号里，什么在引号外
+    
+    def square(x):
+      return x * x
+      // 注意括号里需要存在内容，所以打了x/n 
+      // 乘方表达： x * x
+                  x ** 2
+                  pow(x, 2) -- x to the power of 2
+    main()
+    
+-- End of Unit One   
